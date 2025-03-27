@@ -33,8 +33,16 @@ const Hero: FC<HeroProps> = ({ slice }) => {
           ),
         }}
       />
-      {slice.primary.video?.html && (
-        <div dangerouslySetInnerHTML={{ __html: slice.primary.video.html }} />
+      {slice.primary.video?.html ? (
+        <div
+          className="video-embed-wrapper"
+          dangerouslySetInnerHTML={{ __html: slice.primary.video.html }}
+        />
+      ) : (
+        <div className="video-placeholder">
+          {/* Optional: Add a fallback message or placeholder content */}
+          <p>Video content not available</p>
+        </div>
       )}
     </Bounded>
   );
