@@ -21,11 +21,12 @@
             "single": "heading1"
           }
         },
-        "video": {
-          "type": "Embed",
+        "img": {
+          "type": "Image",
           "config": {
-            "label": "Video",
-            "placeholder": ""
+            "label": "img",
+            "constraint": {},
+            "thumbnails": []
           }
         }
       },

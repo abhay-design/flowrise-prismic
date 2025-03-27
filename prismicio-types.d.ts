@@ -187,14 +187,14 @@ export interface HeroSliceDefaultPrimary {
   heading: prismic.TitleField;
 
   /**
-   * Video field in *Hero → Default → Primary*
+   * img field in *Hero → Default → Primary*
    *
-   * - **Field Type**: Embed
+   * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: hero.default.primary.video
-   * - **Documentation**: https://prismic.io/docs/field#embed
+   * - **API ID Path**: hero.default.primary.img
+   * - **Documentation**: https://prismic.io/docs/field#image
    */
-  video: prismic.EmbedField;
+  img: prismic.ImageField<never>;
 }
 
 /**

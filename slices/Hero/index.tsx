@@ -4,6 +4,7 @@ import { SliceComponentProps } from "@prismicio/react";
 import { PrismicRichText } from "@prismicio/react";
 import Bounded from "@/components/Bounded";
 import Heading from "@/components/Heading";
+import { PrismicNextImage } from "@prismicio/next";
 
 /**
  * Props for `Hero`.
@@ -33,15 +34,12 @@ const Hero: FC<HeroProps> = ({ slice }) => {
           ),
         }}
       />
-      {slice.primary.video?.html ? (
-        <div
-          className="video-embed-wrapper"
-          dangerouslySetInnerHTML={{ __html: slice.primary.video.html }}
-        />
-      ) : (
-        <div className="video-placeholder">
-          {/* Optional: Add a fallback message or placeholder content */}
-          <p>Video content not available</p>
+      {slice.primary.img && (
+        <div className="flex-1">
+          <PrismicNextImage
+            field={slice.primary.img}
+            className="w-full h-auto rounded-lg shadow-md"
+          />
         </div>
       )}
     </Bounded>
