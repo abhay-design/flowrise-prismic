@@ -15,6 +15,9 @@ module.exports = {
         body: ["var(--font-nunito-sans)"],
         display: ["var(--font-nunito)"],
       },
+      colors: {
+        customdark: 'rgb(30, 45, 59)',
+      },
     },
   },
   plugins: [],
