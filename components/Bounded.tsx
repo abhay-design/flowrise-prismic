@@ -15,12 +15,12 @@ export default function Bounded({
   return (
     <Comp
       className={clsx(
-        "flex flex-col items-center text-center px-6 py-12 md:py-16 lg:py-24 max-w-5xl mx-auto",
+        "flex flex-wrap w-full text-center min-h-[930px] ",
         className
       )}
       {...restProps}
     >
-      <div className="container">{children}</div>
+      {children}
     </Comp>
   );
 }

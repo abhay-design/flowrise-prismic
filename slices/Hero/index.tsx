@@ -19,6 +19,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="relative"
     >
       <PrismicRichText
         field={slice.primary.heading}
@@ -27,7 +28,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
             <Heading
               as="h1"
               size="xl"
-              className="md:mb-8 mb-4 mt-12 first-mt-0 last:mb-0"
+              className="w-full mt-[80px!important] text-white"
             >
               {children}
             </Heading>
@@ -35,10 +36,10 @@ const Hero: FC<HeroProps> = ({ slice }) => {
         }}
       />
       {slice.primary.img && (
-        <div className="flex-1">
+        <div className="absolute left-0 top-0 w-full h-full z-[-2]">
           <PrismicNextImage
             field={slice.primary.img}
-            className="w-full h-auto rounded-lg shadow-md"
+            className="w-full h-full object-cover"
           />
         </div>
       )}

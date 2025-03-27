@@ -1,7 +1,7 @@
 import { createClient } from "@/prismicio";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicNextLink } from "@prismicio/next";
-// import Link from "next/link";
+import Link from "next/link";
 
 export default async function Header() {
   const client = createClient();
@@ -12,9 +12,9 @@ export default async function Header() {
       <div className="wrapper w-full relative flex flex-wrap justify-between items-center">
         {settings.data.logo && (
           <div className="logo-wrap relative max-w-[331px] h-[100px]">
-            {/* <Link href="/" className="emptylink">
+            <Link href="/" className="emptylink">
               .
-            </Link> */}
+            </Link>
             <PrismicNextImage
               field={settings.data.logo}
               className="w-full h-auto rounded-lg shadow-md"
@@ -28,7 +28,7 @@ export default async function Header() {
               <li key={label} className="mr-[60px!important]">
                 <PrismicNextLink
                   field={link}
-                  className="text-white text-[14px]"
+                  className="text-white text-[14px] hover:text-[#EDCD1F] transition duration-300 ease-in-out"
                 >
                   {label}
                 </PrismicNextLink>
