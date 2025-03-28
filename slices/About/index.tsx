@@ -19,15 +19,16 @@ const About: FC<AboutProps> = ({ slice }) => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="about"
     >
-      <div className="bg-img absolute right-0 top-0 w-[50%] h-full">
+      <div className="bg-img absolute right-0 top-0 w-full h-full">
         <PrismicNextImage
           field={slice.primary.img}
           className="w-full h-full object-cover"
         />
       </div>
       <div className="container">
-        <div className="text-wrapper relative max-w-[404px]">
+        <div className="text-wrap z-[2] relative max-w-[404px]">
           <PrismicRichText
             field={slice.primary.title}
             components={{
@@ -35,7 +36,7 @@ const About: FC<AboutProps> = ({ slice }) => {
                 <Heading
                   as="h2"
                   size="lg"
-                  className="w-full  text-black relative mb-[50px]"
+                  className="w-full  text-black relative mb-[50px!important] text-left"
                 >
                   {children}
                 </Heading>

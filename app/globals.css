@@ -33,6 +33,7 @@ body {
 
 section {
   padding: 80px 0;
+  position: relative;
 }
 
 .emptylink {
@@ -74,6 +75,36 @@ section {
 .services p {
   font-size: 16px;
   font-weight: 400;
+  color: rgb(59, 58, 58);
+  text-align: left;
+}
+
+.about::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(247, 247, 247, 1);
+}
+
+.about h2::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 6px;
+  bottom: -10px;
+  left: 12%;
+  background-color: rgb(237, 205, 31);
+  transform: translate(-20%, -20%);
+}
+
+.about p {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.7;
   color: rgb(59, 58, 58);
   text-align: left;
 }
