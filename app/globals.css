@@ -108,3 +108,11 @@ section {
   color: rgb(59, 58, 58);
   text-align: left;
 }
+
+.counter p {
+  font-weight: 400;
+  color: rgb(61, 89, 117);
+  font-size: 22px;
+  line-height: 1.1;
+  text-align: center;
+}

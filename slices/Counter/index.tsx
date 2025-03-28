@@ -18,10 +18,10 @@ const Counter: FC<CounterProps> = ({ slice }) => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="bg-[rgb(237,205,31)]"
+      className="bg-[rgb(237,205,31)] counter"
     >
       <div className="container">
-        <div className="wrapper">
+        <div className="wrapper flex flex-wrap">
           {slice.primary.group.map((item, index) => (
             <div
               className="col-four w-[calc(25%-50px)] mx-[25px!important]"
@@ -33,28 +33,15 @@ const Counter: FC<CounterProps> = ({ slice }) => {
                   heading4: ({ children }) => (
                     <Heading
                       as="h4"
-                      size="md"
-                      className="w-full text-black text-left mb-[17px]"
+                      size="lg"
+                      className="w-full text-black text-center  mb-[15px!important]"
                     >
                       {children}
                     </Heading>
                   ),
                 }}
               />
-              <PrismicRichText
-                field={item.description}
-                components={{
-                  heading4: ({ children }) => (
-                    <Heading
-                      as="h4"
-                      size="md"
-                      className="w-full text-black text-left mb-[17px]"
-                    >
-                      {children}
-                    </Heading>
-                  ),
-                }}
-              />
+              <PrismicRichText field={item.description} />
             </div>
           ))}
         </div>
