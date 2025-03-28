@@ -19,7 +19,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative"
+      className="relative min-h-[930px]"
     >
       <PrismicRichText
         field={slice.primary.heading}

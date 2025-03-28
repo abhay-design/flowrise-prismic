@@ -8,7 +8,7 @@ export default async function Header() {
 
   const settings = await client.getSingle("settings");
   return (
-    <header className="w-full bg-[rgb(30,45,59)] h-[100px]">
+    <header className="w-full bg-[rgb(30,45,59)] h-[100px] fixed z-[99]">
       <div className="wrapper w-full relative flex flex-wrap justify-between items-center">
         {settings.data.logo && (
           <div className="logo-wrap relative max-w-[331px] h-[100px]">
