@@ -246,6 +246,76 @@ type AboutSliceVariation = AboutSliceDefault;
 export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
 
 /**
+ * Item in *Counter → Default → Primary → group*
+ */
+export interface CounterSliceDefaultPrimaryGroupItem {
+  /**
+   * title field in *Counter → Default → Primary → group*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: counter.default.primary.group[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * description field in *Counter → Default → Primary → group*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: counter.default.primary.group[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Counter → Default → Primary*
+ */
+export interface CounterSliceDefaultPrimary {
+  /**
+   * group field in *Counter → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: counter.default.primary.group[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  group: prismic.GroupField<Simplify<CounterSliceDefaultPrimaryGroupItem>>;
+}
+
+/**
+ * Default variation for Counter Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CounterSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CounterSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Counter*
+ */
+type CounterSliceVariation = CounterSliceDefault;
+
+/**
+ * Counter Shared Slice
+ *
+ * - **API ID**: `counter`
+ * - **Description**: Counter
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CounterSlice = prismic.SharedSlice<
+  "counter",
+  CounterSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -419,6 +489,11 @@ declare module "@prismicio/client" {
       AboutSliceDefaultPrimary,
       AboutSliceVariation,
       AboutSliceDefault,
+      CounterSlice,
+      CounterSliceDefaultPrimaryGroupItem,
+      CounterSliceDefaultPrimary,
+      CounterSliceVariation,
+      CounterSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
