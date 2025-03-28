@@ -19,6 +19,7 @@ const Services: FC<ServicesProps> = ({ slice }) => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="services"
     >
       <div className="container">
         <div className="text-wrap w-full relative">
@@ -28,8 +29,8 @@ const Services: FC<ServicesProps> = ({ slice }) => {
               heading2: ({ children }) => (
                 <Heading
                   as="h2"
-                  size="xl"
-                  className="w-full mt-[80px!important] text-black"
+                  size="lg"
+                  className="w-full  text-black relative"
                 >
                   {children}
                 </Heading>
@@ -37,7 +38,7 @@ const Services: FC<ServicesProps> = ({ slice }) => {
             }}
           />
         </div>
-        <div className="wrapper mt-[50px!important]">
+        <div className="wrapper mt-[50px!important] flex flex-wrap">
           {slice.primary.cards.map((item, index) => (
             <div
               className="card w-[calc(33.33%-20px)] mx-[10px!important]"
