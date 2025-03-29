@@ -407,6 +407,21 @@ export interface ServicesSliceDefaultPrimaryCardsItem {
 }
 
 /**
+ * Item in *Services → Projects → Primary → Cards*
+ */
+export interface ServicesSliceProjectsPrimaryCardsItem {
+  /**
+   * img field in *Services → Projects → Primary → Cards*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.projects.primary.cards[].img
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  img: prismic.ImageField<never>;
+}
+
+/**
  * Primary content in *Services → Default → Primary*
  */
 export interface ServicesSliceDefaultPrimary {
@@ -445,9 +460,47 @@ export type ServicesSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Services → Projects → Primary*
+ */
+export interface ServicesSliceProjectsPrimary {
+  /**
+   * Heading field in *Services → Projects → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.projects.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField;
+
+  /**
+   * Cards field in *Services → Projects → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.projects.primary.cards[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  cards: prismic.GroupField<Simplify<ServicesSliceProjectsPrimaryCardsItem>>;
+}
+
+/**
+ * Projects variation for Services Slice
+ *
+ * - **API ID**: `projects`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServicesSliceProjects = prismic.SharedSliceVariation<
+  "projects",
+  Simplify<ServicesSliceProjectsPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Services*
  */
-type ServicesSliceVariation = ServicesSliceDefault;
+type ServicesSliceVariation = ServicesSliceDefault | ServicesSliceProjects;
 
 /**
  * Services Shared Slice
@@ -505,8 +558,11 @@ declare module "@prismicio/client" {
       ServicesSlice,
       ServicesSliceDefaultPrimaryCardsItem,
       ServicesSliceDefaultPrimary,
+      ServicesSliceProjectsPrimaryCardsItem,
+      ServicesSliceProjectsPrimary,
       ServicesSliceVariation,
       ServicesSliceDefault,
+      ServicesSliceProjects,
     };
   }
 }
