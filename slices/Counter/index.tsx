@@ -24,7 +24,7 @@ const Counter: FC<CounterProps> = ({ slice }) => {
         <div className="wrapper flex flex-wrap">
           {slice.primary.group.map((item, index) => (
             <div
-              className="col-four w-[calc(25%-50px)] mx-[25px!important]"
+              className="col-four w-[calc(25%-114px)] mx-[57px!important] relative"
               key={index}
             >
               <PrismicRichText
