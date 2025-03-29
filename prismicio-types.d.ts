@@ -250,6 +250,86 @@ type AboutSliceVariation = AboutSliceDefault;
 export type AboutSlice = prismic.SharedSlice<"about", AboutSliceVariation>;
 
 /**
+ * Item in *ClientsLogo → Default → Primary → Logos*
+ */
+export interface ClientsLogoSliceDefaultPrimaryLogosItem {
+  /**
+   * icon field in *ClientsLogo → Default → Primary → Logos*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: clients_logo.default.primary.logos[].icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icon: prismic.ImageField<never>;
+
+  /**
+   * hover_icon field in *ClientsLogo → Default → Primary → Logos*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: clients_logo.default.primary.logos[].hover_icon
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  hover_icon: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *ClientsLogo → Default → Primary*
+ */
+export interface ClientsLogoSliceDefaultPrimary {
+  /**
+   * Heading field in *ClientsLogo → Default → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: clients_logo.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.TitleField;
+
+  /**
+   * Logos field in *ClientsLogo → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: clients_logo.default.primary.logos[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  logos: prismic.GroupField<Simplify<ClientsLogoSliceDefaultPrimaryLogosItem>>;
+}
+
+/**
+ * Default variation for ClientsLogo Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ClientsLogoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ClientsLogoSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ClientsLogo*
+ */
+type ClientsLogoSliceVariation = ClientsLogoSliceDefault;
+
+/**
+ * ClientsLogo Shared Slice
+ *
+ * - **API ID**: `clients_logo`
+ * - **Description**: ClientsLogo
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ClientsLogoSlice = prismic.SharedSlice<
+  "clients_logo",
+  ClientsLogoSliceVariation
+>;
+
+/**
  * Item in *Counter → Default → Primary → group*
  */
 export interface CounterSliceDefaultPrimaryGroupItem {
@@ -546,6 +626,11 @@ declare module "@prismicio/client" {
       AboutSliceDefaultPrimary,
       AboutSliceVariation,
       AboutSliceDefault,
+      ClientsLogoSlice,
+      ClientsLogoSliceDefaultPrimaryLogosItem,
+      ClientsLogoSliceDefaultPrimary,
+      ClientsLogoSliceVariation,
+      ClientsLogoSliceDefault,
       CounterSlice,
       CounterSliceDefaultPrimaryGroupItem,
       CounterSliceDefaultPrimary,

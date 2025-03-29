@@ -131,3 +131,14 @@ section {
 .counter .col-four:last-child::before {
   display: none;
 }
+
+.clients-logo h2::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 6px;
+  bottom: -10px;
+  left: 50%;
+  background-color: rgb(237, 205, 31);
+  transform: translate(-50%, -50%);
+}
