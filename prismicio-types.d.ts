@@ -331,6 +331,61 @@ export type ClientsLogoSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Contact → Default → Primary*
+ */
+export interface ContactSliceDefaultPrimary {
+  /**
+   * heading field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * iframe field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.iframe
+   * - **Documentation**: https://prismic.io/docs/field#embed
+   */
+  iframe: prismic.EmbedField;
+}
+
+/**
+ * Default variation for Contact Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContactSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Contact*
+ */
+type ContactSliceVariation = ContactSliceDefault;
+
+/**
+ * Contact Shared Slice
+ *
+ * - **API ID**: `contact`
+ * - **Description**: Contact
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactSlice = prismic.SharedSlice<
+  "contact",
+  ContactSliceVariation
+>;
+
+/**
  * Item in *Counter → Default → Primary → group*
  */
 export interface CounterSliceDefaultPrimaryGroupItem {
@@ -632,6 +687,10 @@ declare module "@prismicio/client" {
       ClientsLogoSliceDefaultPrimary,
       ClientsLogoSliceVariation,
       ClientsLogoSliceDefault,
+      ContactSlice,
+      ContactSliceDefaultPrimary,
+      ContactSliceVariation,
+      ContactSliceDefault,
       CounterSlice,
       CounterSliceDefaultPrimaryGroupItem,
       CounterSliceDefaultPrimary,
