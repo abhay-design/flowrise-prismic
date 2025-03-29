@@ -18,6 +18,7 @@ const Contact: FC<ContactProps> = ({ slice }) => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="contact"
     >
       <div className="container">
         <div className="text-wrap">
@@ -36,7 +37,7 @@ const Contact: FC<ContactProps> = ({ slice }) => {
             }}
           />
         </div>
-        <div className="wrapper w-full relative">
+        <div className="wrapper mt-[50px!important] w-full relative">
           {slice.primary.iframe?.html ? (
             <div
               dangerouslySetInnerHTML={{
