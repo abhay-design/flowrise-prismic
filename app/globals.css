@@ -142,3 +142,31 @@ section {
   background-color: rgb(237, 205, 31);
   transform: translate(-50%, -50%);
 }
+
+.projects .img-wrap::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  filter: opacity(0);
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 2;
+  --itemOpacity: #3b3a3a;
+  transition:
+    filter 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.projects .img-wrap:hover::before {
+  filter: opacity(1);
+}
+
+.projects .img-wrap:hover img {
+  transform: scale(1.2) rotate(2deg);
+}
+
+.projects img {
+  transition: 0.5s;
+}

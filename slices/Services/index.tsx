@@ -86,7 +86,7 @@ const Services: FC<ServicesProps> = ({ slice }) => {
         <Bounded
           data-slice-type={slice.slice_type}
           data-slice-variation={slice.variation}
-          className="services"
+          className="services projects"
         >
           <div className="container">
             <div className="text-wrap w-full relative">
@@ -111,7 +111,7 @@ const Services: FC<ServicesProps> = ({ slice }) => {
                   className="card w-[calc(50%-30px)] mx-[15px!important] mt-[30px!important]"
                   key={index}
                 >
-                  <div className="img-wrap max-w-full h-[455px]">
+                  <div className="img-wrap overflow-hidden relative max-w-full h-[455px]">
                     {item.img && (
                       <PrismicNextImage
                         field={item.img}
