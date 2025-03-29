@@ -105,13 +105,13 @@ const Services: FC<ServicesProps> = ({ slice }) => {
                 }}
               />
             </div>
-            <div className="wrapper mt-[50px!important] flex flex-wrap">
+            <div className="wrapper mt-[20px!important] flex flex-wrap">
               {slice.primary.cards.map((item, index) => (
                 <div
-                  className="card w-[calc(33.33%-20px)] mx-[10px!important]"
+                  className="card w-[calc(50%-30px)] mx-[15px!important] mt-[30px!important]"
                   key={index}
                 >
-                  <div className="img-wrap max-w-full h-[225px]">
+                  <div className="img-wrap max-w-full h-[455px]">
                     {item.img && (
                       <PrismicNextImage
                         field={item.img}
