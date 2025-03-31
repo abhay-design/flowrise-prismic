@@ -41,6 +41,7 @@ const Contact: FC<ContactProps> = ({ slice }) => {
         <div className="wrapper mt-[50px!important] w-full relative">
           {slice.primary.iframe?.html ? (
             <div
+              className="max-w-[940px] w-full h-[365px]"
               dangerouslySetInnerHTML={{
                 __html: slice.primary.iframe.html,
               }}
