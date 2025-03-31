@@ -81,6 +81,15 @@ section {
   font-weight: 400;
   color: rgb(59, 58, 58);
   text-align: left;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.services .card {
+  min-height: 491px;
 }
 
 .about::before {

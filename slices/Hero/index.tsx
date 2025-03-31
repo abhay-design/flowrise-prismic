@@ -20,6 +20,7 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="relative min-h-[930px]"
+      id="banner"
     >
       <PrismicRichText
         field={slice.primary.heading}
