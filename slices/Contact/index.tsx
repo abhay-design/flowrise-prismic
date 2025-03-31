@@ -18,6 +18,7 @@ const Contact: FC<ContactProps> = ({ slice }) => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      id="contact"
       className="contact"
     >
       <div className="container">
