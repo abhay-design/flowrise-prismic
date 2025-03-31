@@ -16,7 +16,8 @@ export default function Bounded({
 }: BoundedProps) {
   return (
     <Comp
-      className={clsx("flex flex-wrap w-full text-center", className, id)}
+      id={id}
+      className={clsx("flex flex-wrap w-full text-center", className)}
       {...restProps}
     >
       {children}

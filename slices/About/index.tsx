@@ -20,7 +20,7 @@ const About: FC<AboutProps> = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="about"
-      id="/about"
+      id="about"
     >
       <div className="bg-img absolute right-0 top-0 w-full h-full">
         <PrismicNextImage

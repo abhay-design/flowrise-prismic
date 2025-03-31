@@ -22,6 +22,7 @@ const Services: FC<ServicesProps> = ({ slice }) => {
           data-slice-type={slice.slice_type}
           data-slice-variation={slice.variation}
           className="services"
+          id="services"
         >
           <div className="container">
             <div className="text-wrap w-full relative">
