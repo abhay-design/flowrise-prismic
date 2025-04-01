@@ -96,7 +96,9 @@ export default async function Testimonials({ slice }: TestimonialsProps) {
                 )}
 
                 <div className="content-wrap text-left">
-                  <div className="font-semibold ">{testimonial?.data.name}</div>
+                  <div className="font-semibold text-black">
+                    {testimonial?.data.name}
+                  </div>
 
                   {testimonial?.data.job_title && (
                     <div className="text-sm text-gray-500 ">
