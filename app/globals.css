@@ -69,6 +69,17 @@ section {
   transform: translate(-50%, -50%);
 }
 
+.testimonials h2::before {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 6px;
+  bottom: -10px;
+  left: 50%;
+  background-color: rgb(237, 205, 31);
+  transform: translate(-50%, -50%);
+}
+
 .services h3 {
   font-size: 26px;
   font-weight: 600;
@@ -90,6 +101,10 @@ section {
 
 .services .card {
   min-height: 491px;
+}
+
+.projects .card {
+  min-height: auto;
 }
 
 .about::before {
